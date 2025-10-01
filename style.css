@@ -1,0 +1,181 @@
+body {
+  background: linear-gradient(135deg, #67b26f, #4ca2cd);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+.weather-card {
+  background-color: #ffffffd1;
+  border-radius: 15px;
+}
+
+#weatherIcon {
+  width: 100px;
+  height: 100px;
+}
+
+#extraMessage {
+  margin-top: 12px;
+  color: #007bff;
+}
+
+.input-group>.btn-outline-secondary {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.input-group>.btn-outline-secondary:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+/* #suggestions {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  max-width: 480px;
+} */
+.list-group-item {
+  cursor: pointer;
+}
+.list-group-item:hover {
+  background-color: #f4faff;
+}
+.input-group {
+  position: relative;
+}
+.autocomplete-container {
+  position: relative;
+}
+
+#suggestions {
+  position: absolute;
+  top: 100%;        /* Exactly below the input group */
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: #fff;
+  border: 1px solid #cce6ff;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 12px rgba(123,183,255,0.13);
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.list-group-item {
+  cursor: pointer;
+  padding: 10px 16px;
+}
+.list-group-item:hover {
+  background: #e9f5ff;
+}
+
+.autocomplete-active {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+}
+/* Basic positioning */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.weather-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So clicks pass through */
+  z-index: -1; /* Behind content */
+  overflow: hidden;
+  transition: background 1s ease, opacity 1s ease;
+}
+
+/* Rain animation */
+/* .rain {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2) 30%, transparent 80%);
+  animation: rain-fall 1.5s linear infinite;
+  box-shadow: 0 10px 5px -5px rgba(255,255,255,0.6);
+  height: 100vh;
+  width: 100vw;
+}
+
+  /* @keyframes rain-fall {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 100%;
+    }
+  }
+
+  /* Snow animation */
+  /* .snow {
+    background: radial-gradient(white 2px, transparent 2px);
+    background-size: 20px 20px;
+    animation: snow-fall 10s linear infinite;
+  }
+
+  @keyframes snow-fall {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 100%;
+    }
+  } */ */ */
+
+
+.rain {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2) 30%, transparent 80%);
+  background-size: 100% 200%;
+  background-repeat: repeat-y;
+  animation: rain-fall 1.5s linear infinite;
+}
+
+.snow {
+  background: radial-gradient(white 2px, transparent 2px);
+  background-size: 20px 20px;
+  background-repeat: repeat;
+  animation: snow-fall 10s linear infinite;
+}
+
+
+/* Clear sky animation (simple moving gradient) */
+.clear {
+  background: linear-gradient(270deg, #87ceeb, #f0f8ff, #87ceeb);
+  background-size: 600% 600%;
+  animation: gradient-move 30s ease infinite;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Cloudy animation - subtle opacity pulse */
+.cloudy {
+  background: #cfcfcf;
+  animation: cloudy-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes cloudy-pulse {
+  0% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
